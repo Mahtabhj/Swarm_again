@@ -2,7 +2,7 @@ version: "3"
 
 services:
     nginx:
-        image: mahtabhj/frontend
+        build: .
         restart: unless-stopped
         ports:
             - 5000:5000
@@ -26,7 +26,8 @@ services:
       
 
         restart: unless-stopped
-    
+        volumes:
+            - /mongo:/data/db
 
     statusservice:
         build: ./DS Step-2/status
